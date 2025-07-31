@@ -44,6 +44,13 @@
   links:
     paper: "https://dl.acm.org/doi/abs/10.1145/3652963.3655050"
 
+- title: "Cooperative Multi-source Data Trading"
+  authors: "J. Cheng, **N. Ding**, J. C.S. Lui, and J. Huang"
+  description:  "IEEE Global Communications Conference (GLOBECOM), 2024.  <span style=\"color:#3a5581; font-weight:bold;\">(TH-CPL B)</span>"
+  type: conference
+  links:
+    paper: "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10900935"
+    
 - title: "Strategic Data Revocation in Federated Unlearning"
   authors: "**N. Ding**, E. Wei, and R. Berry"
   description: "IEEE International Conference on Computer Communications (INFOCOM), 2024. <span style=\"color:#3a5581; font-weight:bold;\">(Acceptance rate 19.6%, CCF A)</span>"
