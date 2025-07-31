@@ -1,0 +1,122 @@
+---
+layout: default
+title: "people"
+permalink: /people/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="preload" href="/assets/images/bak1.webp" as="image">
+    <link rel="preload" href="/assets/gallery/index.webp" as="image">
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script src="{{ '/scripts/shader.js' | relative_url }}"></script>
+</head>
+
+<body>
+
+    <section class="full-width-section hero-area" id="PEOPLE">
+        <div class="container">
+            <h1>MEET OUR GROUP</h1>
+            <h1 style="color: #cfa827;">PEOPLE</h1>
+        </div>
+    </section>
+
+
+
+    <div class="page-content" style="max-width: 1200px;">
+        <div class="bar-container">
+            <div class="bar-text">
+                FACULTY
+            </div>
+        </div>
+
+        <div class="people-list">
+            {% assign target_category = "Faculty" %}
+            {% for person in site.data.people %}
+            {% if person.category == target_category %}
+            <div class="person-card">
+                <img src="{{ person.cdnavatar }}" onerror="this.onerror=null; this.src='{{ person.avatar }}';"
+                    alt="{{ person.name }} 头像" class="person-avatar" />
+                <p class="person-name">{{ person.name }}</p>
+                <p class="person-description">{{ person.description }}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="bar-container">
+            <div class="bar-text">
+                PHD STUDENT
+            </div>
+        </div>
+
+        <div class="people-list">
+            {% assign target_category = "PhD" %}
+            {% for person in site.data.people %}
+            {% if person.category == target_category %}
+            <div class="person-card">
+                <img src="{{ person.cdnavatar }}" onerror="this.onerror=null; this.src='{{ person.avatar }}';"
+                    alt="{{ person.name }} 头像" class="person-avatar" />
+                <p class="person-name">{{ person.name }}</p>
+                <p class="person-gender">{{ person.gender }}</p>
+                <p class="person-description">{{ person.description }}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="bar-container">
+            <div class="bar-text">
+                INTERNSHIP
+            </div>
+        </div>
+
+        <div class="people-list">
+            {% assign target_category = "RA" %}
+            {% for person in site.data.people %}
+            {% if person.category == target_category %}
+            <div class="person-card">
+                <img src="{{ person.cdnavatar }}" onerror="this.onerror=null; this.src='{{ person.avatar }}';"
+                    alt="{{ person.name }} 头像" class="person-avatar" />
+                <p class="person-name">{{ person.name }}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        const section = document.querySelector('.hero-area');
+
+        // 图片地址定义
+        const cdnBg = 'https://ooo.0x0.ooo/2025/07/28/OY2JGx.webp';
+        const fallbackBg = '/assets/images/bak1.webp';
+
+        const cdnBgAlt = 'https://ooo.0x0.ooo/2025/07/28/OY2PIj.webp';
+        const fallbackBgAlt = '/assets/gallery/index_1.webp';
+
+        // 加载函数
+        function tryLoadImage(url, fallback, callback) {
+            const img = new Image();
+            img.src = url;
+            img.onload = () => callback(url);
+            img.onerror = () => callback(fallback);
+        }
+
+        // 加载两张图（正常 + scrolled）
+        tryLoadImage(cdnBg, fallbackBg, function (resultUrl) {
+            section.style.setProperty('--hero-bg', `url(${resultUrl})`);
+        });
+
+        tryLoadImage(cdnBgAlt, fallbackBgAlt, function (resultUrl) {
+            section.style.setProperty('--hero-bg-alt', `url(${resultUrl})`);
+        });
+    </script>
+
+</body>
+
+</html>

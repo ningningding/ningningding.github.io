@@ -1,0 +1,151 @@
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.page__footer {
+  @include clearfix;
+  float: none;
+  margin: 3em auto 0 auto;
+  width: 100%;
+  background-color: $constrast-color;
+
+  footer {
+    @include clearfix;
+    margin-inline: auto;
+    margin-top: 2em;
+    max-width: 100%;
+    padding: 0;
+
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .fas,
+  .fab,
+  .far,
+  .fal {
+    color: $muted-text-color;
+  }
+}
+
+
+.page__footer-bottom {
+  width: 100%;
+  height: 20pt;
+  background-color: $main-color;
+  margin: 0, auto;
+  padding: 0;
+}
+
+.page__footer-follow {
+  width: 100%;
+  min-height: 100px; 
+  padding: 20px 0 0 0; 
+  box-sizing: border-box; 
+}
+
+
+.about-grid-container {
+  display: flex;
+  flex-wrap: wrap; 
+  row-gap: 2px;
+  column-gap: 5px;      
+  justify-content: center; 
+  align-items: flex-start;
+  max-width: 900px; 
+  margin: 0 auto;    
+  padding: 0 0 35px 0; 
+  box-sizing: border-box; 
+}
+
+.about-container {
+  flex: 1 1 250px;
+  height: auto; 
+  margin: 0;             
+  padding: 15px 15px 0px 15px;
+  background-color: $constrast-color;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.about-title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.1em;
+  height: 20px;
+}
+
+.about-title-text {
+  font-size: clamp(18px, 1.1em, 25px);
+  font-weight: bold;
+  color: #444;
+  margin-right: 20px;
+  white-space: nowrap;
+}
+
+.about-title-line {
+  color: #444;
+  flex-grow: 1;
+  height: 2px;
+  background-color: #000;
+  min-width: 20px;
+}
+
+.about-content {
+  font-size: clamp(14px, 0.7em, 20px);
+  color: #444;
+  line-height: 1.2;
+  overflow-y: auto;
+}
+
+.about-logo {
+  max-width: 200px; 
+  height: auto;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+/* 小屏幕设备 (如手机，宽度小于 768px) */
+@media (max-width: 767px) {
+  .about-grid-container {
+    flex-direction: column; /* 让容器垂直堆叠 */
+    align-items: center; /* 垂直居中堆叠的容器 */
+  }
+
+  .about-container {
+    width: 95%; /* 小屏幕上每个容器占据大部分宽度 */
+    max-width: 400px; /* 但限制最大宽度，避免在某些平板上过宽 */
+    flex: 0 0 auto; /* 不增长不收缩，宽度固定为 95% 或 max-width */
+  }
+}
+
+/* 中等屏幕设备 (如平板，宽度在 768px 到 1024px 之间) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .about-container {
+    /* 两列布局：减去一半的 gap 来计算宽度，确保间距正确 */
+    flex-basis: calc(50% - 10px); 
+    max-width: calc(50% - 10px); 
+  }
+}
+
+/* 大屏幕设备 (宽度大于 1025px) */
+@media (min-width: 1025px) {
+  .about-container {
+    /* 三列布局：减去三分之二的 gap 来计算宽度，确保间距正确 */
+    flex-basis: calc(33.33% - 13.33px); 
+    max-width: calc(33.33% - 13.33px); 
+  }
+}
+

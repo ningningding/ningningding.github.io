@@ -1,0 +1,127 @@
+---
+layout: default
+title: "publication"
+permalink: /publication/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+</head>
+
+<section class="full-width-section hero-area" id="PUBLICATION">
+    <div class="container">
+        <h1>READ UP ON OUR WORK</h1>
+        <h1 style="color:#cfa827;text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);" >PUBLICATIONS</h1>
+        <p>We publish our work at the international top-tier venues for all of our research areas.</p>
+    </div>
+</section>
+
+<body>
+
+    <div class="page-content">
+        <div class="bar-container">
+            <div class="bar-text", style="width: 80%;">
+                CONFERENCE
+            </div>
+        </div>
+
+        <div class="conference-table">
+            {% assign type = "conference" %}
+            {% assign entries = site.data.publication | where: "type", type %}
+            {% if entries.size > 0 %}
+            {% for paper in entries %}
+            <div class="paper-entry">
+                <div class="title">{{ paper.title }}</div>
+                <div class="authors" style="line-height:1.3; font-family: Georgia, 'Times New Roman', Times, serif;">{{ paper.authors | markdownify }}</div>
+                <div class="description" style="line-height:1.3; font-family: Georgia, 'Times New Roman', Times, serif;">{{ paper.description | markdownify }}</div>
+                <div class="links">
+                    {% if paper.links.paper %}
+                    <a href="{{ paper.links.paper }}" target="_blank" aria-label="Paper" title="Paper">
+                        <img src="/assets/icons/pdf.svg" alt="Paper icon" width="25" height="25" />
+                    </a>
+                    {% endif %}
+                    {% if paper.links.code %}
+                    <a href="{{ paper.links.code }}" target="_blank" aria-label="Code" title="Code">
+                        <img src="/assets/icons/github.svg" alt="Code icon" width="25" height="25" />
+                    </a>
+                    {% endif %}
+                    {% if paper.links.slide %}
+                    <a href="{{ paper.links.slide }}" target="_blank" aria-label="Slide" title="Slide">
+                        <img src="/assets/icons/slide.svg" alt="Slide icon" width="25" height="25" />
+                    </a>
+                    {% endif %}
+
+                </div>
+
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+
+        <div class="bar-container">
+            <div class="bar-text", style="width: 80%;">
+                JOURNEL
+            </div>
+        </div>
+
+
+        <div class="conference-table">
+            {% assign type = "journal" %}
+            {% assign entries = site.data.publication | where: "type", type %}
+            {% if entries.size > 0 %}
+            {% for paper in entries %}
+            <div class="paper-entry">
+                <div class="title">{{ paper.title }}</div>
+                <div class="authors" style="line-height:1.3; font-family: Georgia, 'Times New Roman', Times, serif;">{{ paper.authors | markdownify }}</div>
+                <div class="description" style="line-height:1.3; font-family: Georgia, 'Times New Roman', Times, serif;">{{ paper.description }}</div>
+                <div class="links">
+                    {% if paper.links.paper %}
+                    <a href="{{ paper.links.paper }}" target="_blank" aria-label="Paper" title="Paper">
+                        <img src="/assets/icons/pdf.svg" alt="Paper icon" width="25" height="25" />
+                    </a>
+                    {% endif %}
+                    {% if paper.links.code %}
+                    <a href="{{ paper.links.code }}" target="_blank" aria-label="Code" title="Code">
+                        <img src="/assets/icons/github.svg" alt="Code icon" width="25" height="25" />
+                    </a>
+                    {% endif %}
+                    {% if paper.links.slide %}
+                    <a href="{{ paper.links.slide }}" target="_blank" aria-label="Slide" title="Slide">
+                        <img src="/assets/icons/slide.svg" alt="Slide icon" width="25" height="25" />
+                    </a>
+                    {% endif %}
+
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    </div>
+<script>
+  const cdnBg = 'https://ooo.0x0.ooo/2025/07/28/OY2LWv.webp';   // link1
+  const fallbackBg = '/assets/images/bak3.webp';                     // link2 (本地或备用地址)
+
+  const img = new Image();
+  img.src = cdnBg;
+
+  img.onload = function () {
+    document.getElementById('PUBLICATION').style.backgroundImage = `url(${cdnBg})`;
+  };
+
+  img.onerror = function () {
+    document.getElementById('PUBLICATION').style.backgroundImage = `url(${fallbackBg})`;
+  };
+</script>
+</body>
+
+</html>

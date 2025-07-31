@@ -1,0 +1,72 @@
+---
+layout: default
+title: "service"
+permalink: /service/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+</head>
+
+<section class="full-width-section hero-area" id="SERVICE">
+    <div class="container">
+        <h1 style="color:#cfa827;">SERVICE</h1>
+    </div>
+</section>
+
+<body>
+
+  <div class="page-content" style="max-width: 1200px;">
+
+
+    <div class="bar-container">
+      <div class="bar-text" id="committee-bar">
+        Organizing/Technical Committee
+      </div>
+    </div>
+
+    <div class="service-section">
+      <ul class="service-list">
+        {% for item in site.data.committee %}
+        <li>{{ item.content | markdownify | strip_html | strip }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="bar-container">
+      <div class="bar-text" id="committee-bar">
+        Technical Review
+      </div>
+    </div>
+    <div class="service-section">
+      
+      <ul class="service-list">
+        {% for item in site.data.review %}
+        <li>{{ item.content | markdownify | strip_html | strip }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+<script>
+  const cdnBg = 'https://ooo.0x0.ooo/2025/07/28/OY2Egq.webp';   // link1
+  const fallbackBg = '/assets/gallery/service_bak1.webp';                     // link2 (本地或备用地址)
+
+  const img = new Image();
+  img.src = cdnBg;
+
+  img.onload = function () {
+    document.getElementById('SERVICE').style.backgroundImage = `url(${cdnBg})`;
+  };
+
+  img.onerror = function () {
+    document.getElementById('SERVICE').style.backgroundImage = `url(${fallbackBg})`;
+  };
+</script>
+</body>
+
+</html>

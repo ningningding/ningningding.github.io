@@ -1,0 +1,450 @@
+@keyframes heroBgZoomOut {
+    0% {
+        background-size: 115% auto;
+    }
+
+    100% {
+        background-size: 100% auto;
+    }
+}
+
+.hero-area {
+    aspect-ratio: 5 / 2;
+    background-image: var(--hero-bg); // 初始背景
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s cubic-bezier(0.33, 1, 0.68, 1),
+        background-image 0.6s ease-in-out;
+    color: $white-color;
+    padding: 150px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        background-size: 120% auto;
+    }
+
+    &.scrolled {
+        background-image: var(--hero-bg-alt); // 另一个背景图变量
+
+        &::before {
+            opacity: 0;
+        }
+
+        h1 {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        p {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $black-overlay;
+        z-index: 1;
+        opacity: 1;
+    }
+
+    &.is-animated {
+        animation: heroBgZoomOut 4s ease-out forwards;
+    }
+
+    h1 {
+        will-change: transform, opacity;
+    }
+
+
+    .container {
+        z-index: 2;
+        position: relative;
+
+        h1 {
+            text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.6);
+        }
+        p {
+            transition: transform 0.8s ease, opacity 0.8s ease;
+        }
+    }
+
+    h1 {
+        font-size: 3em;
+        margin-bottom: $spacing-unit;
+    }
+
+    p {
+        font-size: 1.2em;
+        opacity: 0.9;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .hero-area h1 {
+        font-size: 1.8em; 
+    }
+
+    .hero-area p {
+        font-size: 0.8em;
+    }
+
+    .hero-area {
+        padding: 50px 0;
+        aspect-ratio: 5/2.5;
+    }
+}
+
+.index-area {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s cubic-bezier(0.33, 1, 0.68, 1),
+        background-image 0.6s ease-in-out;
+    color: $white-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 40pt 0 0 0;
+    overflow: hidden;
+
+
+    .container {
+        z-index: 2;
+        position: relative;
+
+        h1 {
+            text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.6);
+        }
+        p {
+            transition: transform 0.8s ease, opacity 0.8s ease;
+        }
+    }
+
+    h1 {
+        font-size: 3em;
+        margin-bottom: $spacing-unit;
+    }
+
+    p {
+        font-size: 1.2em;
+        opacity: 0.9;
+    }
+}
+
+
+.full-width-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+#vanta-bg {
+  position: fixed;
+  background-color: #335391;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+}
+
+.page-content {
+  width: 80%;
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.5); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+
+    @media (max-width: 768px) {
+        width: 95%;
+        padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+    }   
+}
+
+.index-content {
+  width: 80%;
+  position: relative;
+  z-index: 2;
+  padding: 1.3rem;
+  background: rgba(255, 255, 255, 0.5); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  @media (max-width: 768px) {
+        width: 95%;
+        padding: 0.5rem 0.2rem 1rem 0.5rem;
+  }   
+}
+
+
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.application-box {
+    width: 80%;
+    max-width: 800pt;
+    font-size: 20px;
+    color: #000000;
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 10pt;
+    line-height: 1.3;
+    background-color: #FFF9E6;
+    border: 1px solid #888;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s ease-out, transform 0.8s ease-out;
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    a {
+        color: $main-color;
+        text-decoration: none;
+    }
+    
+    @media (max-width: 768px) {
+        width: 100%;
+    }   
+}
+
+
+
+.experience-section {
+    width: 75%;
+    max-width: 720pt;
+    margin: auto;
+    margin-bottom: 25pt;
+
+    .exp_subtitle {
+        font-size: 1.2rem;
+        color: $main-color !important;
+        margin-bottom: 0;
+
+    }
+
+    .experience-item {
+
+        div {
+            font-size: 0.9rem;
+            color: #222;
+            line-height: 1.2;
+            padding: 0;
+
+        }
+
+        a {
+            color: $main-color;
+            text-decoration: none;
+        }
+
+        margin-bottom: 15pt;
+    }
+
+}
+
+
+
+.service-section {
+    width: 80%;
+    max-width: 720pt;
+    margin: auto;
+
+    .service_subtitle {
+        font-size: 1.2rem;
+        color: $main-color !important;
+        margin-bottom: 1em;
+    }
+
+    .service-list {
+        list-style-type: square;
+
+        li {
+            font-size: 0.9rem;
+            margin-bottom: 7px;
+            color: #222;
+            padding: 0;
+            line-height: 1;
+        }
+
+        li::marker {
+            font-size: 25px;
+            color: $main-color;
+        }
+
+    }
+    @media (max-width: 768px) {
+        width: 100%;
+    }   
+}
+
+.background-div {
+  background: $main-color;
+  height: 50vh; // 或更大
+  z-index: 1;
+  position: relative;
+  margin-top: -40vh;
+}
+.image-text-block {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+  max-width: 900px;
+
+  .image {
+    flex: 1.5;
+    width: 30%;
+    max-width: 30%;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .text {
+    flex: 2.5;
+    line-height: 1.4;
+    color: #000;
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin: 0 auto;
+      max-width: 75%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .image-text-block {
+    flex-direction: column;
+    text-align: center;
+
+    .image {
+      max-width: 300px;
+      width: 90%;
+    }
+
+    .text {
+      text-align: center;
+    }
+  }
+}
+
+
+.text_wrapper {
+    width: 50%;
+    z-index: 10;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .text-intro {
+        font-size: 40px;
+        color: #000;
+        text-align: left;
+        margin: 0;
+        line-height: 1.1;
+    }
+
+    .text-subtitle {
+        font-size: 40px;
+        color: $main-color;
+        text-align: left;
+        margin-top: 2px; // 控制两个标题之间的距离（调小点）
+        margin-bottom: 5px;
+        line-height: 1.1;
+    }
+
+    .text-desc {
+        width: 80%;
+        margin: auto;
+        font-size: 18px;
+        color: #000;
+        text-align: left;
+        margin: 0;
+        line-height: 1.1;
+    }
+}
+
+
+.text-box {
+    width: 80%;
+    max-width: 800pt;
+    font-size: 20px;
+    color: #000000;
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 10pt;
+    line-height: 1.3;
+    a {
+        color: $main-color;
+        text-decoration: none;
+    }
+    .openning-list {
+        list-style-type: square;
+
+        li {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #000;
+            padding: 0;
+            line-height: 1;
+        }
+
+        li::marker {
+            font-size: 25px;
+            color: $main-color;
+        }
+    }
+
+    @media (max-width: 768px) {
+        width: 95%;
+        padding: 0.7rem 0.2rem 0.4rem 0.2rem;
+        font-size: 20px;
+    }
+
+}

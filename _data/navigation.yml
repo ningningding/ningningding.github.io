@@ -1,0 +1,12 @@
+# main links
+main:
+  - title: "ABOUT"
+    url: /
+  - title: "PEOPLE"
+    url: /people/
+  - title: "PUBLICATION"
+    url: /publication/
+  - title: "SERVICE"
+    url: /service/
+  - title: "OPPOTUNITY"
+    url: /oppotunity/ 
