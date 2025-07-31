@@ -4,6 +4,10 @@
   type: conference
   links:
 
+- title: "COTRA: A Data Trading Framework for Multi-source Data Cooperation"
+  authors: "J. Cheng, **N. Ding**, J. C.S. Lui, and J. Huang"
+  description: "IEEE Transactions on Mobile Computing (TMC), 2025. <span style=\"color:#3a5581; font-weight:bold;\">(CCF A, JCR Q1)</span>"
+  type: journal
 
 - title: "Incentivized Federated Learning and Unlearning"
   authors: "**N. Ding**, Z. Sun, E. Wei, and R. Berry"
@@ -75,6 +79,13 @@
   links:
     paper: "https://ieeexplore.ieee.org/document/9796826"
 
+- title: "Optimization Design for Federated Learning in Heterogeneous 6G Networks"
+  authors: "B. Luo, X. Ouyang, P. Sun, P. Han, **N. Ding**, and J. Huang"
+  description: "IEEE Network, vol. 37, no. 2, pp. 38-43, 2023."
+  type: journal
+  links:
+    paper: "https://ieeexplore.ieee.org/document/10239352"
+
 - title: "Optimal Incentive and Load Design for Distributed Coded Machine Learning"
   authors: "**N. Ding**, Z. Fang, L. Duan, and J. Huang"
   description: "IEEE Journal on Selected Areas in Communications (JSAC), vol. 39, no. 7, pp. 2090-2104, Jul. 2021. <span style=\"color:#3a5581; font-weight:bold;\">(CCF A, JCR Q1)</span>"
@@ -98,14 +109,14 @@
 
 - title: "Information Disclosure Game on Sharing Platforms"
   authors: "**N. Ding**, Z. Fang, and J. Huang"
-  description: "IEEE Global Communications Conference (GLOBECOM), 2020."
+  description: "IEEE Global Communications Conference (GLOBECOM), 2020.  <span style=\"color:#3a5581; font-weight:bold;\">(TH-CPL B)</span>"
   type: conference
   links:
     paper: "https://ieeexplore.ieee.org/document/9322642"
 
 - title: "Incentive Mechanism Design for Federated Learning with Multi-Dimensional Private Information"
   authors: "**N. Ding**, Z. Fang, and J. Huang"
-  description: "International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks (WiOpt), 2020."
+  description: "International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks (WiOpt), 2020. <span style=\"color:#3a5581; font-weight:bold;\">(TH-CPL B)</span>"
   type: conference
   links:
     paper: "https://ieeexplore.ieee.org/document/9155318"
