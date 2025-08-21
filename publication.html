@@ -10,7 +10,7 @@ permalink: /publication/
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url}}">
 
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 </head>
@@ -44,17 +44,17 @@ permalink: /publication/
                 <div class="links">
                     {% if paper.links.paper %}
                     <a href="{{ paper.links.paper }}" target="_blank" aria-label="Paper" title="Paper">
-                        <img src="/assets/icons/pdf.svg" alt="Paper icon" width="25" height="25" />
+                        <img src="{{ 'assets/icons/pdf.svg' | relative_url}}"alt="Paper icon" width="25" height="25" />
                     </a>
                     {% endif %}
                     {% if paper.links.code %}
                     <a href="{{ paper.links.code }}" target="_blank" aria-label="Code" title="Code">
-                        <img src="/assets/icons/github.svg" alt="Code icon" width="25" height="25" />
+                        <img src="{{ 'assets/icons/github.svg' | relative_url}}" alt="Code icon" width="25" height="25" />
                     </a>
                     {% endif %}
                     {% if paper.links.slide %}
                     <a href="{{ paper.links.slide }}" target="_blank" aria-label="Slide" title="Slide">
-                        <img src="/assets/icons/slide.svg" alt="Slide icon" width="25" height="25" />
+                        <img src="{{ 'assets/icons/slide.svg' | relative_url}}" alt="Slide icon" width="25" height="25" />
                     </a>
                     {% endif %}
 
@@ -85,17 +85,17 @@ permalink: /publication/
                 <div class="links">
                     {% if paper.links.paper %}
                     <a href="{{ paper.links.paper }}" target="_blank" aria-label="Paper" title="Paper">
-                        <img src="/assets/icons/pdf.svg" alt="Paper icon" width="25" height="25" />
+                        <img src="{{ 'assets/icons/pdf.svg' |relative_url}}" alt="Paper icon" width="25" height="25" />
                     </a>
                     {% endif %}
                     {% if paper.links.code %}
                     <a href="{{ paper.links.code }}" target="_blank" aria-label="Code" title="Code">
-                        <img src="/assets/icons/github.svg" alt="Code icon" width="25" height="25" />
+                        <img src="{{ 'assets/icons/github.svg'| relative_url}}" alt="Code icon" width="25" height="25" />
                     </a>
                     {% endif %}
                     {% if paper.links.slide %}
                     <a href="{{ paper.links.slide }}" target="_blank" aria-label="Slide" title="Slide">
-                        <img src="/assets/icons/slide.svg" alt="Slide icon" width="25" height="25" />
+                        <img src="{{ 'assets/icons/slide.svg' | relative_url}}" alt="Slide icon" width="25" height="25" />
                     </a>
                     {% endif %}
 

@@ -2,7 +2,7 @@
 /* Variables */
 @font-face {
   font-family: "CustomFont";
-  src: url("/assets/font/FSBenjamin-Medium.ttf") format("truetype");
+  src: url("../font/FSBenjamin-Medium.ttf") format("truetype");
 }
 /* ==========================================================================
    Variables
@@ -1980,7 +1980,7 @@ body {
 }
 .paper-entry .authors {
   font-size: 16px;
-  color: #444;
+  color: #333;
   margin-bottom: 2pt;
 }
 .paper-entry .authors p {
@@ -1991,7 +1991,7 @@ body {
   /*font-family: Georgia, serif;*/
   font-weight: 300;
   font-size: 16px;
-  color: #666;
+  color: #333;
   margin-bottom: 2pt;
 }
 .paper-entry .description p {
