@@ -10,11 +10,9 @@ permalink: /people/
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="preload" href="/assets/images/bak1.webp" as="image">
-    <link rel="preload" href="/assets/gallery/index.webp" as="image">
+    <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url}}">
+   
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-    <script src="{{ '/scripts/shader.js' | relative_url }}"></script>
 </head>
 
 <body>
@@ -89,15 +87,25 @@ permalink: /people/
             {% endfor %}
         </div>
     </div>
+
+    <div class="page-content" style="max-width: 1200px;">
+        <div class="bar-container">
+            <div class="bar-text">
+                GALLERY
+            </div>
+        </div>
+        <img src="{{ 'assets/gallery/index_1.webp' | relative_url}}" 
+     alt="example" 
+     class="image" 
+     style="border-radius: 10px; width: 85%; display: block; margin: 0 auto;">
+
+    </div>
     <script>
         const section = document.querySelector('.hero-area');
 
         // 图片地址定义
         const cdnBg = 'https://ooo.0x0.ooo/2025/07/28/OY2JGx.webp';
         const fallbackBg = '/assets/images/bak1.webp';
-
-        const cdnBgAlt = 'https://ooo.0x0.ooo/2025/07/28/OY2PIj.webp';
-        const fallbackBgAlt = '/assets/gallery/index_1.webp';
 
         // 加载函数
         function tryLoadImage(url, fallback, callback) {
@@ -112,9 +120,6 @@ permalink: /people/
             section.style.setProperty('--hero-bg', `url(${resultUrl})`);
         });
 
-        tryLoadImage(cdnBgAlt, fallbackBgAlt, function (resultUrl) {
-            section.style.setProperty('--hero-bg-alt', `url(${resultUrl})`);
-        });
     </script>
 
 </body>

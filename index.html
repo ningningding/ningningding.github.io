@@ -4,17 +4,16 @@ layout: default
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url}}">
   <style>
     #index-li::marker {
-      color: wheat;
+      color: #000;
     }
     #index-li {
-      color: wheat;
+      color: #000;
       font-size: 1.0em;
       font-family: 'CustomFont';
       line-height: 1.2;
@@ -54,13 +53,14 @@ layout: default
       <img src="https://ooo.0x0.ooo/2025/07/28/OY2thp.jpg" onerror="this.onerror=null; this.src='/assets/avatars/ningningding_bio.jpg';" alt="example" class="image">
       <div class="text", style="text-align: center;">
         <p>Assistant Professor
-          <br>Data Science and Analytics Thrust and the Internet of Things Thrust
+          <br>Data Science and Analytics Thrust and Internet of Things Thrust
           <br>Information Hub
           <br>The Hong Kong University of Science and Technology
           (Guangzhou)
         </p>
       <br>
         <p style="font-size: 1rem;">Email: ningningding[at]hkust-gz.edu.cn</p>
+        <p style="font-size: 1rem;">Office: W2-508, HKUST-GZ</p>
       </div>
     </div>
 
@@ -71,21 +71,21 @@ layout: default
   </div>
 
 
-      <div class="page-content" style="max-width: 1000px; background: rgba(25, 57, 127, 0.8); ">
-        <div class="text-box" style="color: wheat;">
+      <div class="page-content" style="max-width: 1000px; ">
+        <div class="text-box" style="color: #000;">
             I am a Tenure-Track Assistant Professor in the Data Science and Analytics Thrust and the Internet of Things Thrust, Information Hub, Hong Kong University of Science and Technology (Guangzhou). 
             I also hold an affiliated position at the Hong Kong University of Science and Technology (Clear Water Bay). 
             <br><br>
             I received my PhD from The Chinese University of Hong Kong, Hong Kong SAR, China, advised by Prof. Jianwei Huang. 
             Before joining HKUST-GZ, I was a Postdoctoral Scholar at Northwestern University, Evanston, USA, advised by Prof. Randall Berry and Prof. Ermin Wei.
             <br><br>
-            I am actively looking for self-motivated PhD students (Spring/Fall 2026) to join our lab <a href="{{'/assets/PhDRecruitment_HKUST-GZ_NingningDing1.pdf'|relative_url}}" style="color: #cfa827;" target="_blank">[Details]</a>. 
+            I am actively looking for self-motivated PhD students (Spring/Fall 2026) to join our lab <a href="{{'/assets/PhDRecruitment_HKUST-GZ_NingningDing1.pdf'|relative_url}}" style="color: #8f7319;" target="_blank">[Details]</a>. 
             If you are interested, please email me your CV and all transcripts!
             <br><br>
         </div>
         <div class="text-box" >
-            <strong style="color: #cfa827;" id="research-title">Research Interests:</strong><br>
-            <span style="color: wheat;">My research focuses on interdisciplinary areas of artificial intelligence, network systems, and network economics.</span>
+            <strong style="color: #8f7319;" id="research-title">Research Interests:</strong><br>
+            <span style="color: #000;">My research focuses on interdisciplinary areas of artificial intelligence, network systems, and network economics.</span>
             <ul class="openning-list">
                 <li id="index-li"><strong>Artificial intelligence</strong>: federated learning, machine
                     unlearning, multi-agent coordination and game.</li>
